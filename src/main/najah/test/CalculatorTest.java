@@ -82,11 +82,5 @@ public class CalculatorTest {
         assertThrows(IllegalArgumentException.class, () -> calc.factorial(-5), "Negative input should throw IllegalArgumentException");
     }
 
-    @Test
-    @Disabled("This test is intentionally failing. The add method should be fixed to handle this correctly.")
-    @DisplayName("Test Failed Addition")
-    @Order(8)
-    void testFailing() {
-        assertEquals(4, calc.add(2, 3), "2 + 3 should equal 5");
-    }
+   
 }
