@@ -46,7 +46,4 @@ This repository contains the solution for the **Software Testing and Quality Ass
 ## Contributing
 Feel free to contribute by creating an issue or submitting a pull request. If you have suggestions for improvements, please submit them!
 
----
 
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
