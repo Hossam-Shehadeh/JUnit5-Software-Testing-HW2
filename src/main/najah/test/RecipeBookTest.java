@@ -112,5 +112,40 @@ public class RecipeBookTest {
         assertEquals("", r.getName());
         assertEquals(0, r.getPrice());
     }
-}
 
+    @Test
+    void testRecipeSetterMethodsThrowsRecipeException() {
+        // Testing invalid input for recipe attributes
+        Recipe invalidRecipe = new Recipe();
+
+        // Invalid coffee amount (non-integer input)
+        assertThrows(RecipeException.class, () -> invalidRecipe.setAmtCoffee("invalid"));
+
+        // Invalid milk amount (negative integer)
+        assertThrows(RecipeException.class, () -> invalidRecipe.setAmtMilk("-1"));
+
+        // Invalid price (negative integer)
+        assertThrows(RecipeException.class, () -> invalidRecipe.setPrice("-100"));
+    }
+
+    @Test
+    void testEqualsAndHashCode() {
+        recipe1.setName("Espresso");
+        Recipe anotherRecipe1 = new Recipe();
+        anotherRecipe1.setName("Espresso");
+
+        assertTrue(recipe1.equals(anotherRecipe1)); // Should be equal by name
+        assertEquals(recipe1.hashCode(), anotherRecipe1.hashCode()); // Same hashCode for same name
+
+        Recipe differentRecipe = new Recipe();
+        differentRecipe.setName("Latte");
+
+        assertFalse(recipe1.equals(differentRecipe)); // Should not be equal
+    }
+
+    @Test
+    void testToString() {
+        recipe1.setName("Latte");
+        assertEquals("Latte", recipe1.toString()); // toString should return the name
+    }
+}
